@@ -1,0 +1,153 @@
+How to create environment, install jango, project and apps and connect between them
+
+Create Environment:
+1. pip install virtualenv
+2. virtualenv add_a_room(like room1)
+3. source ./room1/Scripts/activate
+4. To check correct or not (virtualenv --version)
+
+install django:
+1. pip install django
+2. python -m django --version (to check django)
+
+Create Project:
+1. django-admin startproject project_name
+2. cd project_name
+3. python manage.py runserver
+the it will show a link and click on that after that
+a webpage will open
+
+if i want to write there something the following steps
+1. cd project_name
+2. The create a file with the name of views.py because
+there are no views.py to show the template or other thing
+3. search the urls.py and write there 
+    1. from .import views
+    2. path('', views.home),
+4. For connecting with the urls page now i have to import
+  so write this code
+    from django.http import HttpResponse
+
+    then write a function
+        def home(request):
+        return HttpResponse('From Home of the main project')
+        (HttpResponse is use for sending the response because a webpage 
+        cant understand the return )
+
+Why we create apps?
+We create apps for distributing the project code
+it will help to run the code faster, understandable also
+less time consume etc.
+
+Create Apps:
+1. django-admin startproject project_name
+2. cd project_name
+3. django-admin startapp app_name
+
+** if i want to write there something the following steps:
+
+1. Create a file with the name of app_name
+
+views.py because
+there are no views.py to show the template or other thing
+3. search the urls.py and write there 
+    1. from .import views
+    2. path('', views.home),
+4. For connecting with the urls page now i have to import
+  so write this code
+    from django.http import HttpResponse
+
+    then write a function
+        def home(request):
+        return HttpResponse('From Home of the main project')
+        (HttpResponse is use for sending the response because a webpage 
+        cant understand the return )
+
+3. python manage.py runserver
+the it will show a link and click on that after that
+a webpage will open
+
+
+module 2.4- how to write html code from template
+1. first create a project. then create a views.py name file
+2. Goto urls. py and make connection between views.py
+   from .import views
+   path('', views.home),
+
+3. Then create templates folder on third project 
+    goto settings to declare goto template format: 
+    write this 'DIRS': [BASE_DIR/'templates'],
+
+4. Goto views.py and write
+    from django.shortcuts import render
+    def home(request):
+    return render(request,'index.html')
+5. Goto index.html file write code here and run..
+
+Module-2.5.
+
+
+                Module-3.1
+
+Working with Static Files inside Project
+Static file means  song, image, video or other thing which are 
+store in main project and they are unchangeable.
+So, What is the procedure?
+First of all 
+step 1: create a folder with name static or something
+step 2: crete other folder under the static folder to store
+        images, js and css folder
+step 3: then take some image copy that and paste it images folder
+step 4: if we try to access images django didnt allow that so it need 
+        to be take permission from main project setting folder
+
+        after that we can see **** STATIC_URL='static/'
+
+        this means if we have a website with the name of abc.com then if we need
+        to access image from images folder then the link will be: static.abc.com
+        this means the file is on static folder and it communicate with STATICFILES_DIRS 
+        to locate the file.
+
+        Your project will probably also have static assets that aren’t tied to a 
+        particular app. In addition to using a static/ directory inside your apps, 
+        you can define a list of directories (STATICFILES_DIRS) in your settings 
+        file where Django will also look for static files. 
+        this means this STATICFILES_DIRS use for where the images file are store For example:
+
+        **** STATICFILES_DIRS = [
+                 BASE_DIR / "static",
+              ]
+
+
+                        Module 3.3
+
+Static vs Dynamic file/ Media File
+
+Media file is changeable when a data come from
+backend that is media file. 
+
+# Base url to serve media files
+MEDIA_URL = '/media/'
+
+# Path where media is stored'
+MEDIA_ROOT = BASE_DIR / 'media'
+        
+        By default, Django doesn't serve media files during development( when debug=True).
+
+        In order to make the development server serve the media files open the url.py of the project and make the below changes.
+url.py
+
+from django.conf import settings
+from django.conf.urls.static import static
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    ...]
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL,
+                          document_root=settings.MEDIA_ROOT)
+
+That's all now, run the local development server add files in the media root folder and retrieve them from media URL.
+
+
+Module 3.5 Using Url tag in Django Project
