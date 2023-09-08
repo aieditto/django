@@ -31,6 +31,7 @@ there are no views.py to show the template or other thing
     then write a function
         def home(request):
         return HttpResponse('From Home of the main project')
+        
         (HttpResponse is use for sending the response because a webpage 
         cant understand the return )
 
