@@ -1,3 +1,4 @@
+                                Module-1.7 to ----->
 How to create environment, install jango, project and apps and connect between them
 
 Create Environment:
@@ -85,7 +86,24 @@ module 2.4- how to write html code from template
     return render(request,'index.html')
 5. Goto index.html file write code here and run..
 
-Module-2.5.
+            Module-2.5. Django Template Language If-Else condition
+after the setting of apps template now from the views.py in the function there are
+a link like 
+
+./app_name/index.html or something write there with comma like the below example:
+ return render (request,'./fifth_app/index.html/', {'author':'Anis', 'age':23})
+ I can send value from here
+
+it will be shown by template folder index.html file
+
+Now you can write condition here like the below example:
+
+    {%if age < 10 %}
+    <p>you are dumb</p>
+    {% else %}
+    <p>you are nah</p>
+    {% endif %}
+NB: if you write *if* condition you have to must be write *endif* there
 
 
                 Module-3.1
