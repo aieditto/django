@@ -30,7 +30,19 @@
             <td>{{i.teacher}}</td>
         </tr>
         {% endfor %}
-        
     </table>
+    <br>
+    <p>
+       Character of Name: {{author | length}}
+       <br>
+       Character of Name: {{author | upper}}
+       <br>
+       <br>
+       truncatewords are usually use for compressing the sentence or topic like see more continue etc.
+       <br>
+       blog truncatewords:<br>
+       {{blog | truncatewords:5}}
+    </p>
+   
 </body>
 </html>
