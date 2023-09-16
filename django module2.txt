@@ -86,7 +86,7 @@ module 2.4- how to write html code from template
     return render(request,'index.html')
 5. Goto index.html file write code here and run..
 
-            Module-2.5. Django Template Language If-Else condition
+            Module-2.6. Django Template Language If-Else condition
 after the setting of apps template now from the views.py in the function there are
 a link like 
 
@@ -105,6 +105,17 @@ Now you can write condition here like the below example:
     {% endif %}
 NB: if you write *if* condition you have to must be write *endif* there
 
+                            
+                            Module 2.7 For loop
+
+for running the for loop first I have to take data from views.py there are a function
+that function store the value and share with the template file 
+
+use this function 
+
+{% for how_many_time_runs in the_stored_variable %}
+    the other codition write here
+{% endfor %}
 
                 Module-3.1
 
