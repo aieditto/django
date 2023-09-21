@@ -117,6 +117,46 @@ use this function
     the other codition write here
 {% endfor %}
 
+For Example:
+{% for i in count %}
+    <p>{{i.id}}</p>
+    <p>{{i.id}}</p>
+    <p>{{i.id}}</p>
+{% endfor %}
+
+                            Module 2.8 Filtering
+
+Filtering means some values are passing from the views.py so If we need to change any word, change or collect
+any information then we can use filtering which are the feature of DTL (Django Template Language) where I can
+write python code in html thats magic for more : https://www.geeksforgeeks.org/django-template-filters/
+
+how to write filter:
+{{ variable_name | filter_name }}
+
+For Example:
+{{ value | length }}
+If value is [‘a’, ‘b’, ‘c’, ‘d’], the output will be 4.
+
+    <p>
+       Character of Name: {{author | length}}
+       <br>
+       Character of Name: {{author | upper}}
+    </p>
+
+NB: The value must need to passed from the views.py 
+Character of Name: {{author | length}}
+       <br>
+       Character of Name: {{author | upper}}
+       <br>
+       <br>
+       truncatewords are usually use for compressing the sentence or topic like see more continue etc.
+       <br>
+       blog truncatewords:<br>
+       {{blog | truncatewords:5}}
+               
+               
+               
+               
                 Module-3.1
 
 Working with Static Files inside Project
