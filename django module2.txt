@@ -158,6 +158,10 @@ Character of Name: {{author | length}}
                
                
                 Module-3.1
+There are two types of files. 1. Static File, 2. Dynamic file
+
+Static files means that file which are store on main project and static files elements cant be changes.
+
 
 Working with Static Files inside Project
 Static file means  song, image, video or other thing which are 
@@ -187,11 +191,20 @@ step 4: if we try to access images django didnt allow that so it need
         **** STATICFILES_DIRS = [
                  BASE_DIR / "static",
               ]
+    then goto html folder and try to link the images
+    {% load static %} //load static means loading the static folder
+    <img src="{% static 'image_link' %}" alt="">
+    <link rel="stylesheet" href="{% static 'link'%}">
 
 
-                        Module 3.3
 
-Static vs Dynamic file/ Media File
+                         Module 3.2 Static folder run from app
+
+        almost same as the project
+
+        
+
+                         Module 3.3 Static vs Dynamic file/ Media File
 
 Media file is changeable when a data come from
 backend that is media file. 
@@ -218,6 +231,10 @@ if settings.DEBUG:
                           document_root=settings.MEDIA_ROOT)
 
 That's all now, run the local development server add files in the media root folder and retrieve them from media URL.
+
+                
+                        
+                        Module 3.4. Adding Bootstrap
 
 
 Module 3.5 Using Url tag in Django Project
