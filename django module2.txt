@@ -236,5 +236,21 @@ That's all now, run the local development server add files in the media root fol
                         
                         Module 3.4. Adding Bootstrap
 
+                            Copy paste from website
 
-Module 3.5 Using Url tag in Django Project
+
+                Module 3.5 Using Url tag in Django Project
+
+path('data/',views.data, name ="information"), 
+to make url tag shortcut i have to give a name of the main source link like as a information
+
+then goto template folder and goto html file write there
+on a linke like :
+
+<a href = "{% url 'information' %}"> Data </a>
+
+
+                Module 3.6 Inheritence in Django Project
+
+If i need to do same work repeatedly it will tough for me and It will make the website slow
+so 
