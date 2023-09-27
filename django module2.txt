@@ -253,4 +253,36 @@ on a linke like :
                 Module 3.6 Inheritence in Django Project
 
 If i need to do same work repeatedly it will tough for me and It will make the website slow
-so 
+so we have to use inheritance method for doing this.
+
+The html file name must be base.html
+Inheritance means the way of how a child template hold all the characteristics of parent template
+DRY principle (Dont Repeat Yourself)
+
+For Example: 
+                              --- About.html  
+Navigtion Bar (Base.html)  ---|-- index.html
+                              --- feedback.html
+
+                Extends Tag
+  {% extends "parent_template_name" %}
+
+                Block Tag
+{% block blockname %} other instruction {% endblock %}
+
+For Example:
+    from: index.html
+    {% extends 'base.html'%}
+    {% block article %} hello world {% endblock %}
+    {% block content %} {{block.super}} The code write {%endblock%} //super keyword use for merging with parent
+
+    from: base.html
+    <html>
+        <head> <title></title> </head>
+        <body>
+            <h1> {% block article %} {% endblock %} </h1>
+            <h1> {% block content %} in python {% endblock %} </h1>
+        </body>
+    </html>
+
+
