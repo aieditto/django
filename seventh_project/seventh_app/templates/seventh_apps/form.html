@@ -1,0 +1,23 @@
+{% extends "base.html"%}
+{% block title %}Form{%endblock%}
+{% block heading%}Form {% endblock %}
+{%block article%} Fillup Your Form{% endblock%}
+
+{% block form %}
+<div class="form" style="width: 50%;justify-content:center; justify-content:center;">
+    <form method="post">
+        <div class="form-group">
+          <label for="exampleInputName" style="color: white;">Name</label>
+          <input type="name"  class="form-control" id="exampleInputName" aria-describedby="nameHelp" placeholder="Enter Name">
+        </div>
+        <div class="form-group">
+        
+        <label for="exampleInputEmail" style="color: white;">Enter Your Email</label>
+        <input type="email" class="form-control" id="exampleInputEmail" placeholder="Email">
+        </div>
+        <br>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+</div>
+
+  {% endblock %}
