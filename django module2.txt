@@ -286,3 +286,7 @@ For Example:
     </html>
 
 
+Module 4.1 Working with Html Forms in Django
+First create a html forms on template folder. Then connect with base.html for DRY(Dont Repeat Yourself) 
+principle for avoiding repeat code. Then goto forms file and write a form there.
+After that 
