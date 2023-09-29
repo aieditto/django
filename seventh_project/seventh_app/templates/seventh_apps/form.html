@@ -4,20 +4,30 @@
 {% block article %} Fillup Your Form{% endblock%}
 
 {% block form %}
-    <div class="form" style="width: 50%;justify-content:center; align-items:center;">
+    <div class="form" style="width: 50%; height:500px; margin:auto" class='pt-5'>
         <form method="post" action="/about/">
           {% csrf_token %}
             <div class="form-group">
               <label for="exampleInputName" style="color: white;">Name</label>
               <input type="text"  class="form-control" id="exampleInputName" aria-describedby="nameHelp" placeholder="Enter Name" name="username">
             </div>
+            <br>
             <div class="form-group">
               <label for="exampleInputEmail" style="color: white;">Enter Your Email</label>
               <input type="email" class="form-control" id="exampleInputEmail" placeholder="Email" name="email">
             </div>
             <br>
-              <button type="submit" class="btn btn-primary">Submit</button>
-          </form>
+            <label for="choose" style="color: white;">Rating Here</label>
+            <select class="form-select" aria-label="Default select example" name="select">
+              <option selected>Open this select menu</option>
+              <option value="1*">1*</option>
+              <option value="2*">2*</option>
+              <option value="3*">3*</option>
+            </select>
+            <br>
+            <button type="submit" class="btn btn-primary">Submit</button>
+              
+            </form>
 
     </div>
 {% endblock %}

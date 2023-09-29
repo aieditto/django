@@ -335,7 +335,13 @@ thats why I have to goto
             and then goto on the page write there the given upper code.
 
             then goto form.html beside the <form> tag write there action=/...../ 
-            it will work perfectly
+            it will work perfectly.
+
+            the process are same for other input to handling data from form.
+
+            If GET use as a method the value will show on the link and it will breache the security
+            hacker can easily hack information.  
+
 
 
 
