@@ -288,5 +288,57 @@ For Example:
 
 Module 4.1 Working with Html Forms in Django
 First create a html forms on template folder. Then connect with base.html for DRY(Dont Repeat Yourself) 
-principle for avoiding repeat code. Then goto forms file and write a form there.
-After that 
+principle for avoiding repeat code. Then goto forms file and create a form there.
+After that when adding a method in <form> tag like
+
+<form method='post'>
+then there will be show CSRF error. This is a security token and the full form of CSRF is (Cross Site Request Forgery)
+
+and it is said to occurs when a malicious Web site deceives users into unwillingly and unknowingly loading a URL from a site where they've previously been authenticated, thus exploiting their status and also putting the data at risk.
+
+POST usually use for collect data send that data to the server and this is encrypted. Thats Why
+this are use for storing personal info.
+
+GET use for collecting data and showing others which have no harmful information or personal information.
+
+after that add after the form tag 
+
+                    
+                {% CSRF_token %}
+
+then goto  views.py of the apps and write there on form function. 
+    
+                print(request.POST)
+
+when I entry some info on form this data send to the backend but it will show some string that is no understandable
+thats why I have to goto 
+        
+        form.html--> search where the input are taking information write there name='username', email='email' this are like
+        catching the value of send from front end. and then it will show the info at terminal.
+
+        1. then write a condition on a function 
+             if request.method=="POST":
+                name=request.POST.get('username')  
+                email=request.POST.get('email')  
+                return render (request,'./seventh_apps/about.html', {'name': name, 'email': email})
+            else: 
+                return render (request,'./seventh_apps/about.html', {'name': name, 'email': email}) 
+
+        2. go to that form.html and write there catch the value which are pass on previous line 
+
+            <h1>Name{{name}}</h1>
+            <h1>Email{{email}}</h1>
+            after running it will show the value 
+            but
+            if I want to show this on other page then I have to copy all condition
+            and paste it on that function which have a link with the page
+            and then goto on the page write there the given upper code.
+
+            then goto form.html beside the <form> tag write there action=/...../ 
+            it will work perfectly
+
+
+
+
+
+
