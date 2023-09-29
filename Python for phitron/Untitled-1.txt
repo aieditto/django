@@ -1,0 +1,110 @@
+//Datebase management System.
+Module 1
+Table and keys
+There are 3types of key 
+1. Primary key
+2. Composite primary key
+3. Foreign key
+
+Primary key: কোনো একটা কি এর আন্ডারে যদি কোনো ডাটা থাকে তাহলে
+সেটা প্রাইমারী কি.
+
+1------Rahim
+2---- Karim
+
+Composite Primary key: If there are more than 2 data field use 
+as a key because 1 data field are not enough for collect the correct information
+that combining key are composite primary key.
+
+1----CSE---Rahim
+2----SWE----Karim
+3-----CSE---Maria
+
+Foreign Key:
+If other table key is use for another table key that are called
+foreign key.
+1----CSE            2---Karim
+2----cw               1-----rahim
+
+
+Module: 1.6 DBMS and RDBMS
+DBMS: Database management System
+DBMS
+!-----Data/information
+!-----Hardware
+!----Software
+!----user
+!-----processing unit 
+
+
+1. Data are 
+2. Create label
+3. Rename label
+4. Update
+5. Query
+Benifit of DBMS
+1. organizely data storing
+2. fast search
+3. parallel acessing
+Usage of DBMS
+1. Various sector use Database
+
+
+Module: 1.7 RDBMS (Realational Database Management System)
+
+Relation between two or more table.
+
+There are 3 type of RDBMS
+1. One to one Relation
+2. One to many or many to one
+3. Many to many
+
+
+
+Module:2-1 Database design
+   
+
+Top down approach
+Suppose top is MODEL and Down is Data
+Model to data transfer
+
+Bottom up approach
+Suppose top is MODEL and Down is Data
+Data to Model transfer
+
+Pitfalls to avoid
+
+
+Module: 2.2 ERD Intro and Relationship:
+ERD(Entity Relationship Diagram)
+This diagram use for database modeling
+There are 3 component for ERD:
+1. Entity
+2. Attribute
+3. Relationship
+
+For Example:
+Suppose creating a database for Student. Now the element like
+STUDENT, TEACHER, RESULT etc are entity.
+
+Under the STUDENT entity there are many things to store for Example
+ID/roll, name, contact, address so this are attritube
+
+and the relatioship are connection between to table.
+
+Relationship
+    !
+    !---1. connectivity  connection between to entity
+    !---2. cardianility  (koita kore connection ache shetak bujai) 
+
+
+
+Module: 2.3 ERD Participations, Notations, Strong weak entity
+Participations (অংশগ্রহণ)
+Like how many data are stay there that are called Participations
+
+For example: All student attend on exam. So, that are Total Participations
+and one are missing or didnt attend the exam. So this are partial Participations
+
+Strong Entity: Jader nijer primary key thake tara strong entity
+Weak Entity: Jader Nijer primary key na thake tara weak entitiy.
