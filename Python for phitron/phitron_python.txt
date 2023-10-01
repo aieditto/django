@@ -258,5 +258,92 @@ print(total)
 # pyautogui.press('enter',presses=1)
 
 
+Introduction to Simple Class Module 5.1
+
+class is an entity where data and object wrap up together
+class carries many info which are used in other class or other place
+
+How to write class and object and use that?
+
+            class class_name:
+                instruction
+
+            object = class_name()
+            object.instruction= value
+            print(object.instruction)
+Example:
+        # class Class_name:
+        #     price=19000
+        #     color='blue'
+        #     brand='samsung'
+
+        # my_phone=Class_name()
+        # print(my_phone)
+        # print(my_phone.price)
+        # print(my_phone.color)
+        # print(my_phone.brand)
+
+        class student:
+            id=''
+            roll=''
+            section=''
+
+        Anis=student()
+        Sakiya=student()
+
+        Anis.id= 220238063
+        Anis.roll= 63
+        Anis.section= 'B'
+        print(Anis.id)
+        print(Anis.roll)
+        print(Anis.section)
+
+        Sakiya.id= 220238048
+        Sakiya.roll= 48
+        Sakiya.section= 'B'
+        print(Sakiya.id)
+        print(Sakiya.roll)
+        print(Sakiya.section)
 
 
+5.2 Creating and Using Methods
+# def function():
+#     print('calling someone i dont know')
+#     return 'call done'
+# class phone:
+#     price = 1200
+#     color= 'yellow'
+#     brand='sandy'
+#     features=['camera', 'speaker']
+    
+#     def call(self): 
+#         # self is use for calling the method in class
+#         print('calling one person')
+    
+#     def send_sms(self, xhone, message):
+#         text= f'send message to {xhone} and sms {message}'
+#         return text
+
+# amar_phone= phone()
+# print(amar_phone.features)
+
+# busy= amar_phone.call()
+# result= amar_phone.send_sms(233, 'Inky pinky ponky')
+# print(result)
+
+class Calculator:
+    brand= 'Casio 6251'
+    def add(self, num1, num2):
+        result= num1+num2
+        return result
+    def sub(self, num1, num2):
+        result2= num1-num2
+        return result2
+
+addition=Calculator()
+print(addition.brand)
+result=addition.add(55,5)
+print(result)
+
+result2=addition.sub(5,2)
+print(result2)
