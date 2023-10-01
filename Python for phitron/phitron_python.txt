@@ -359,7 +359,7 @@ print(result2)
   so it give less time complexity and short to typing code repeatedly.
 
     The Default __init__ Constructor in C++ and Java. Constructors are used to initializing the object’s state. The task of constructors is to initialize(assign values) to the data members of the class when an object of the class is created. Like methods, a constructor also contains a collection of statements(i.e. instructions) that are executed at the time of Object creation. It is run as soon as an object of a class is instantiated. The method is useful to do any initialization you want to do with your object.
-    
+
  class Phone:
      manufacture ='China'
     
@@ -391,3 +391,57 @@ print(f'{addition.num1} + {addition.num2} = {result}')
 sub=Phone(14,5)
 result2=sub.num1-sub.num2
 print(f'{sub.num1} - {sub.num2} = {result2}')
+
+5.4 Class Attributes vs instance attributes
+
+# Class Attribute VS Instance Attribute
+
+class Shop:
+    cart=[] #list declare class attribute this for all not in function
+    def __init__(self,buyer): #init funciton for construction
+        self.buyer = buyer #attribute declare
+        
+    def add_to_cart(self, item):
+        self.cart.append(item)
+
+customer = Shop('Anisul Islam')
+customer.add_to_cart('Audi')
+customer.add_to_cart('Ferari')
+customer.add_to_cart('Marcedies')
+print(customer.cart)
+
+customer2 = Shop('Anisul Islam')
+customer2.add_to_cart('Audi')
+customer2.add_to_cart('Ferari')
+customer2.add_to_cart('Marcedies')
+print(customer2.cart)
+
+
+class Shop:
+     
+    def __init__(self,buyer): #init funciton for construction
+        self.buyer = buyer #attribute declare
+        self.cart=[] #instant attribute #list declare  this for all not in function
+        
+    def add_to_cart(self, item):
+        self.cart.append(item)
+
+customer = Shop('Anisul Islam')
+customer.add_to_cart('Audi')
+customer.add_to_cart('Ferari')
+customer.add_to_cart('Marcedies')
+print(customer.cart)
+
+customer2 = Shop('Sakiya Islam')
+customer2.add_to_cart('Lipstick')
+customer2.add_to_cart('Eyeliner')
+customer2.add_to_cart('Brush')
+print(customer2.cart)
+
+what is the big difference?
+the difference is when using class attribute this are for all other function and object
+so when two or many object are create and call the class the class attribute work for all of them as a result we see if difference object has different items but the result will show all item in one list. 
+
+But if we use instance attribute
+it will work separtely and give the result separately.
+
