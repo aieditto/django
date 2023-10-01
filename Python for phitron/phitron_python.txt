@@ -347,3 +347,47 @@ print(result)
 
 result2=addition.sub(5,2)
 print(result2)
+
+
+        5.3 Constructors and __init__ in python
+
+  # __init__ mean initialize which are use as constructor
+  in python class init is use like the constructor
+  constructor means a class which have some variable or instruction
+  that are use on object  which have similar characteristics
+  and it also like the DRY(Django) princle that means Dont Repeat Yourself
+  so it give less time complexity and short to typing code repeatedly.
+
+    The Default __init__ Constructor in C++ and Java. Constructors are used to initializing the object’s state. The task of constructors is to initialize(assign values) to the data members of the class when an object of the class is created. Like methods, a constructor also contains a collection of statements(i.e. instructions) that are executed at the time of Object creation. It is run as soon as an object of a class is instantiated. The method is useful to do any initialization you want to do with your object.
+    
+ class Phone:
+     manufacture ='China'
+    
+     def __init__(self, owner, brand,price):
+         self.owner=owner
+         self.brand=brand
+         self.price=price
+        
+       
+        
+     def send_msg(self, phone, sems):
+         text= f'sending to: {phone} {sems}'
+         print(text)
+    
+
+# my_phone= Phone('Anis', 'tecno', '8500')
+# print(my_phone.owner, my_phone.brand, my_phone.price)
+
+class Phone:
+    
+    def __init__(self, num1, num2):
+        self.num1=num1
+        self.num2=num2
+        
+addition=Phone(10,19)
+result=addition.num1+addition.num2
+print(f'{addition.num1} + {addition.num2} = {result}')
+
+sub=Phone(14,5)
+result2=sub.num1-sub.num2
+print(f'{sub.num1} - {sub.num2} = {result2}')
