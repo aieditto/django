@@ -44,9 +44,10 @@ class Exam:
             print(f'you got B+ your marks {self.marks}')
         elif self.marks>= 60 & self.marks<=69:
             print(f'you got C your marks {self.marks}')
-        elif self.marks<self.minimum_marks:
+        else: 
+            self.marks<self.minimum_marks
             print(f'you are failed and your result {self.marks}')
 
-Student = Exam('Anis', 3)
+Student = Exam('Anis', 99)
 Student.result(60)
 

@@ -226,7 +226,10 @@ print(total)
 # print(A&B)
 #  other things are on websites
 
-            #Module-3.4 Dictionary and Dictionary methods in python
+                            
+                            
+                             #Module-3.4 Dictionary and Dictionary methods in python
+
 # Dictionary is like key value pair
 # numbers = [12,56,98,78,56,12,26,98]
 # person1 =['Anis', 'Kalipur', 23, 'student']
@@ -258,7 +261,10 @@ print(total)
 # pyautogui.press('enter',presses=1)
 
 
-Introduction to Simple Class Module 5.1
+                            
+                            
+                            
+                                Introduction to Simple Class Module 5.1
 
 class is an entity where data and object wrap up together
 class carries many info which are used in other class or other place
@@ -306,7 +312,11 @@ Example:
         print(Sakiya.section)
 
 
-5.2 Creating and Using Methods
+                            
+                            
+                            
+                              Module  5.2 Creating and Using Methods
+
 # def function():
 #     print('calling someone i dont know')
 #     return 'call done'
@@ -349,7 +359,10 @@ result2=addition.sub(5,2)
 print(result2)
 
 
-        5.3 Constructors and __init__ in python
+                        
+                        
+                        
+                              Module  5.3 Constructors and __init__ in python
 
   # __init__ mean initialize which are use as constructor
   in python class init is use like the constructor
@@ -392,7 +405,10 @@ sub=Phone(14,5)
 result2=sub.num1-sub.num2
 print(f'{sub.num1} - {sub.num2} = {result2}')
 
-5.4 Class Attributes vs instance attributes
+                
+                
+                
+                   Module  5.4 Class Attributes vs instance attributes
 
 # Class Attribute VS Instance Attribute
 
@@ -445,3 +461,102 @@ so when two or many object are create and call the class the class attribute wor
 But if we use instance attribute
 it will work separtely and give the result separately.
 
+
+                                    
+                                    
+                                    
+                                    
+                                    Module- 5.5 Bank System
+
+
+# class Bank:
+#     def __init__(self, balance):
+#         self.balance=balance
+#         self.min_withdraw=100
+#         self.max_withdraw=10000
+    
+#     def get_balance(self):
+#         return self.balance
+    
+#     def deposit(self, amount):
+#         if amount> 0:
+#             self.balance += amount
+#             print(f'your balance is{self.balance}')
+    
+#     def withdraw(self,amount):
+#         if amount<self.min_withdraw:
+#             print(f'Sorry. Minimum withdraw is{self.min_withdraw}')
+#         elif amount>self.max_withdraw:
+#             print(f'Sorry. Maximum withdraw is {self.max_withdraw}')
+#         else:
+#             self.balance-=amount
+#             print(f'Your Balance {self.get_balance()}')   
+
+# dbl=Bank(5000)
+# dbl.withdraw(101)
+
+class Exam:
+    
+    def __init__(self, person, marks):
+        self.person=person
+        self.marks=marks
+        print(f'student name{self.person}')
+        self.minimum_marks=33
+    
+    # def max(self):
+        
+    
+    def result(self, marks):
+        if self.marks>90:
+            print(f'you got A+ your marks {self.marks}')
+        elif self.marks>= 80 & self.marks<=89:
+            print(f'you got A your marks {self.marks}')
+        elif self.marks>= 70 & self.marks<=79:
+            print(f'you got B+ your marks {self.marks}')
+        elif self.marks>= 60 & self.marks<=69:
+            print(f'you got C your marks {self.marks}')
+        else: 
+            self.marks<self.minimum_marks
+            print(f'you are failed and your result {self.marks}')
+
+Student = Exam('Anis', 99)
+Student.result(60)
+
+
+                    
+                                        Module 5.6 Shopping Cart
+
+"""Shopping Cart System"""
+
+class Shopping:
+    
+    def __init__(self, name):
+        self.name = name
+        self.cart =[] #this is a  list
+    
+    def add_to_cart(self, item, price, quantity):
+        product={'item':item, 'price':price, 'quantity':quantity} #this is dictionary (key: value pair)
+        self.cart.append(product)
+    
+    def checkout(self, amount):
+        total = 0
+        print('Your Listed Item:')
+        for item in self.cart:
+            print(item)
+            total += item ['price'] * item ['quantity']
+        print('Your Total bill',total)
+        
+        if total>amount:
+            print(f'Sorry! you have to pay {total-amount} more')
+        else:
+            extra= amount-total
+            print(f'Your cash return', extra)
+            
+
+Anis = Shopping('Anisul Islam')
+Anis.add_to_cart('Alu', 60, 9)
+Anis.add_to_cart('Kodu', 30, 5)
+Anis.add_to_cart('Letus', 300, 1)
+
+# print(Anis.cart)
+Anis.checkout(991)
