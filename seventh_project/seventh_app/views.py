@@ -1,5 +1,6 @@
 from django.shortcuts import render
 
+from forms import contactform 
 # Create your views here.
 
 def payment(request):
@@ -21,7 +22,10 @@ def about(request):
 def form(request):
        return render (request,'./seventh_apps/form.html')
            
-        
+
+def Djangoform(request):
+    form = contactform()
+    return render (request='./seventh_apps/djangoform.html', {'form':form})    
        
    
         
