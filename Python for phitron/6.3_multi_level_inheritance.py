@@ -81,32 +81,32 @@
 
 
 """Example 3 multi level inheritance"""
-class Batch:
-    def __init__(self,section):
-        self.section=section
+# class Batch:
+#     def __init__(self,section):
+#         self.section=section
     
-    def __repr__(self) -> str:
-        pass
+#     def __repr__(self) -> str:
+#         pass
 
-class Section(Batch):
-    def __init__(self, section, ID):
-        self.ID=ID
-        super().__init__(section)
+# class Section(Batch):
+#     def __init__(self, section, ID):
+#         self.ID=ID
+#         super().__init__(section)
 
-class ID(Section):
-    def __init__(self, section, ID, name):
-        self.name=name
-        super().__init__(section, ID)
+# class ID(Section):
+#     def __init__(self, section, ID, name):
+#         self.name=name
+#         super().__init__(section, ID)
 
-class Student(ID):
-    def __init__(self, section, ID, name, Weight, Height, Age):
-        self.Weight=Weight
-        self.Height=Height
-        self.Age=Age
-        super().__init__(section, ID, name)
+# class Student(ID):
+#     def __init__(self, section, ID, name, Weight, Height, Age):
+#         self.Weight=Weight
+#         self.Height=Height
+#         self.Age=Age
+#         super().__init__(section, ID, name)
     
-    def __repr__(self) -> str:
-        return f'Section {self.section}, Id: {self.ID}, Name: {self.name}, Weight: {self.Weight},Height: {self.Height}, Age: {self.Age}'
+#     def __repr__(self) -> str:
+#         return f'Section {self.section}, Id: {self.ID}, Name: {self.name}, Weight: {self.Weight},Height: {self.Height}, Age: {self.Age}'
 
-Anis = Student('B', 220238063, 'Md Anisul Islam', 75, '5\'7', 23)
-print(Anis)
+# Anis = Student('B', 220238063, 'Md Anisul Islam', 75, '5\'7', 23)
+# print(Anis)
