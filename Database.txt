@@ -266,3 +266,73 @@ Example:
                 To show database
 
         SHOW Database
+
+                                
+                                
+                                
+                                Module-5 Database Table
+
+Roll   Name   Contact   Email
+101    Rahim  017...... atatad@gmail
+101    Rahim  017...... atatad@gmail
+101    Rahim  017...... atatad@gmail
+101    Rahim  017...... atatad@gmail
+
+CREATE DATABASE Database_name; //DATABASE CREATION
+USE DATABASE_NAME; //SELECTING DATABASE
+CREATE TABLE table_name(   //CREATING TABLE
+    ROLL INT,
+    NAME VARCHAR(30),
+    CONTACT CHAR(11),
+    EMAIL VARCHAR(30)
+);
+
+To show the output:
+    SELECT * FROM table_name  //this is show all attributes from the table
+
+    SELECT ROLL, NAME FROM table_name  //this will show the mention field from the table
+
+
+                                        
+                                        
+                                        
+                                        Module 5.2 inserting table
+
+
+
+    CREATE DATABASE STUDENT;
+    USE STUDENT;
+    CREATE TABLE STUDENT(
+        NAME VARCHAR (30),
+        ROLL INT,
+        SECTION VARCHAR (1)
+    );
+
+    INSERT INTO STUDENT(NAME, ROLL SECTION) //inserting the value to the table
+    VALUES("anis", 22, "B" )
+    SELECT * FROM table_name
+
+
+
+
+                                Module 5.3 Constraint
+
+Constraint: Constrating are rules that can be defined on a table to enforce data integrity and ensure that the data
+stored in the database meets certain condition.
+
+THERE ARE 7 CONTSTRAINTS:
+
+1. NOT NULL. (Ensure that a column cannot have a NULL value)
+2. UNIQUE.(Ensure that all values in a column are different)
+3. PRIMARY KEY.(A combination of NOT NULL and Unique)
+4. FOREIGN KEY. (Prevents action that would destroy links betweeen table)
+5. CHECK. (Ensure that the values in a column satifies a specific condition)
+6. DEFAULT. (sets a default value for a column isf no value is specified)
+7. CREATE INDEX. (used create and retrieve data from the database quickly)
+
+How to write constratints?
+Constraints must be write in table and constraints has many way to write.
+Example:
+            create table table_name(
+                Name varchar(30) NOT NULL,
+            )
