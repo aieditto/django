@@ -336,3 +336,42 @@ Example:
             create table table_name(
                 Name varchar(30) NOT NULL,
             )
+
+
+
+                            Module-5.4 Update & Delete Table
+    
+    How to update a table?
+
+Step 1: write UPDATE table_name
+Sept 2: SET field_name="value"
+Step 3: WHERE primary_keyword= value;
+
+when write this a error will be show that is security error..
+then write SET SQL_SAFE_UPDATES=0
+
+eXAMPLE:
+                CREATE TABLE STUDENT(
+                    NAME VARCHAR(30),
+                    ROLL INT,
+                    MOBILE CHAR(11),
+                    GMAIL VARCHAR(30)
+                );
+
+                INSERT INTO STUDENT (NAME, ROLL, MOBILE, GMAIL)
+                VALUES('ANISUL ISLAM', 6, "01537279586", "atraders449@gmail.com");
+                INSERT INTO STUDENT (NAME, ROLL, MOBILE, GMAIL)
+                VALUES('SAKIYA TUJ JOHORA', 7, "01800000310", "sakiyatujjohoramumu@gmail.com");
+                DROP TABLE STUDENT;
+                SELECT * FROM STUDENT;
+                SET SQL_SAFE_UPDATES=0;
+                UPDATE STUDENT
+                SET NAME="SAKIYA TUJ JOHORA ISLAM"
+                WHERE ROLL=7;
+
+IF I GIVE THE VALUE OF SET SQL_SAFE_UPDATES= 1 then it will again open the security system of updating thats the magic
+
+*********DELETING A RECORD FROM A TABLE:
+
+                DELETE FROM table_name
+                WHERE record_name= value
