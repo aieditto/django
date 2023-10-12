@@ -376,3 +376,49 @@ IF I GIVE THE VALUE OF SET SQL_SAFE_UPDATES= 1 then it will again open the secur
                 DELETE FROM table_name
                 WHERE record_name= value
 
+<<<<<<< HEAD
+=======
+
+                Module 6.3 Distinct, Orderby Syntax
+
+                        Distinct
+
+DISTINCT Syntax mainly use for showing the value with in single number like if any two
+table has same value after using DISTINCT it will show 1 value.
+
+for example:
+
+                SELECT DISTINCT which_filed_want_to_show FROM table_name;
+
+                    
+                    
+                        ORDER BY
+ORDER BY Syntax uses for managing the value in ascending or descending mode.
+
+For example:
+            This is for all:
+                select  *
+                from departments
+                where department_id
+                ORDER by location_id ASC;
+            
+            This is for fixed field:
+                select  department_id
+                from departments
+                ORDER by location_id DESC;
+
+
+
+                            
+                            Module -6.4 Limit
+    
+    Limit usually use for limiting the value ro shorten the list
+    
+    For Example: 
+                    SELECT * FROM COUNTRIES
+                    LIMIT 5 OFFSET 4;
+
+
+                    SELECT COUNTRY_NAME FROM COUNTRIES
+                    LIMIT 5 OFFSET 4;
+
