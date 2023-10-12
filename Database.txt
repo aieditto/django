@@ -375,3 +375,4 @@ IF I GIVE THE VALUE OF SET SQL_SAFE_UPDATES= 1 then it will again open the secur
 
                 DELETE FROM table_name
                 WHERE record_name= value
+
