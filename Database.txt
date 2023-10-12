@@ -422,3 +422,23 @@ For example:
                     SELECT COUNTRY_NAME FROM COUNTRIES
                     LIMIT 5 OFFSET 4;
 
+
+
+
+                         Module-6.5 Arithmatic Operator
+
+                       Arithmatic Sign  (+ - * / %)
+
+                SELECT 3 + 3 
+                SELECT 3 - 3 
+                SELECT 3 * 3 
+                SELECT 3 / 3 
+                SELECT 3 % 3 
+
+                        Module-6.6 Comparison Operator
+           
+                              Comparison Sign  (  =  <  >  <=  >= )
+           
+            SELECT  *  FROM Products
+            WHERE Price>=9.00
+            Order by Price asc;
