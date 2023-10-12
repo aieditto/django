@@ -1,5 +1,6 @@
-//Datebase management System.
-Module 1
+                                
+                                
+                                Module 1
 Table and keys
 There are 3types of key 
 1. Primary key
@@ -27,7 +28,9 @@ foreign key.
 2----cw               1-----rahim
 
 
-Module: 1.6 DBMS and RDBMS
+
+                            Module: 1.6 DBMS and RDBMS
+
 DBMS: Database management System
 DBMS
 !-----Data/information
@@ -42,15 +45,17 @@ DBMS
 3. Rename label
 4. Update
 5. Query
+
 Benifit of DBMS
 1. organizely data storing
 2. fast search
 3. parallel acessing
+
 Usage of DBMS
 1. Various sector use Database
 
 
-Module: 1.7 RDBMS (Realational Database Management System)
+                        Module: 1.7 RDBMS (Realational Database Management System)
 
 Relation between two or more table.
 
@@ -61,7 +66,7 @@ There are 3 type of RDBMS
 
 
 
-Module:2-1 Database design
+                        Module:2-1 Database design
    
 
 Top down approach
@@ -72,10 +77,32 @@ Bottom up approach
 Suppose top is MODEL and Down is Data
 Data to Model transfer
 
-Pitfalls to avoid
+2. Requirement Analysis
+Requirement analysis is like what kind of data should need to store for the specific model.
+Example:
+            Student Database
+                 |
+                 |-Name
+                 |-Section
+                 |-Roll
+
+3. Pitfalls (ত্রুটিসমূহ) to Avoid
+    1. Redundancy (unnecessary times repeating same thing)
+
+            if two table are connected with each other and there any data need to be changes from one table but
+            their data are connected with both table so, both table data should be changed that is called Redundancy.
+            to avoid Redundancy we have set that way if one table data change than other will be change it automatically.
+    
+    2. Lack of Completeness
+
+            If any table has the valid data missing that means the table is not completed so this are Lack of Completeness.
+       
 
 
-Module: 2.2 ERD Intro and Relationship:
+
+
+                            Module: 2.2 ERD Intro and Relationship:
+
 ERD(Entity Relationship Diagram)
 This diagram use for database modeling
 There are 3 component for ERD:
@@ -97,14 +124,145 @@ Relationship
     !---1. connectivity  connection between to entity
     !---2. cardianility  (koita kore connection ache shetak bujai) 
 
+    cardianility ----   1. One to One   ----> 1:1
+                        2. One to Many  ----> 1:N
+                        2. Many to Many  ----> M:N
+     cardianility: How many connection are there that is called cardianility
 
+                    
+                    
+                    Module: 2.3 ERD Participations, Notations, Strong weak entity
 
-Module: 2.3 ERD Participations, Notations, Strong weak entity
-Participations (অংশগ্রহণ)
-Like how many data are stay there that are called Participations
+                            
+                            Participations (অংশগ্রহণ)
 
-For example: All student attend on exam. So, that are Total Participations
-and one are missing or didnt attend the exam. So this are partial Participations
+Like how many data are join there that is called Participations
 
+            Student             Exam
+            P                   A
+            Q                   B
+            R                   C 
+                                D
+For example: 
+
+All student attend on exam. So, this are Total Participations.
+and one are missing or didn't attend the exam. So this are Partial Participations
+
+                        ERD Notation
+                        
 Strong Entity: Jader nijer primary key thake tara strong entity
 Weak Entity: Jader Nijer primary key na thake tara weak entitiy.
+
+
+
+                    Module 2.4 to before 3.0
+                
+                ****See on Note Book***
+
+
+
+
+                Module 3.0 Introduciton to Query Language
+
+                Query(খোজা)/ Searching
+There are 5 types of query:
+1. Select Query.
+    Finding the specific data from the table using this query.
+
+2. Parameter Query.
+    By using parameter to find the data.
+
+3. Crosstab Query.
+    Summary/Group Data Collect using this query.
+
+4. Unmatched Query.
+    Not match data collection.
+
+5. Action Query.
+    Database change 
+    1. Make Table 
+    2. Append (ektar por rekta store kora)
+    3. Update
+    4. Delete
+
+
+                            Query Language
+
+    There are three types of query language:
+    1. QUEL (query language)
+    2. QBE (Query By Example)
+    3. SQL (structured Query Language)
+
+
+                            Module- 3.3 SQL
+    1. DML (Data Manipulation Language)
+            Select
+            Insert
+            Update
+            Delete
+
+    2. DDL (data Definition Language)
+            Create
+            Alter (change kora)
+            Drop (Eta puro table tak delete kore)
+
+    3. DCL (Data Control Language)
+    4. DTL (Data Transaction Language)
+
+
+                        Module 3.6
+                        Data type
+    *** String Data Type
+
+        1. CHAR (size)
+            CHAR (5) --->"ABCDE"
+        
+        2. VARCHAR (size)
+            VARCHAR(10) --> 'a'
+                        --> 'ab'
+        
+        3. TEXT (size) ---> For writing sentence
+            TEXT(100)
+        
+        4. BLOB (size) --> file, image
+
+    ***NUMERIC Data Type
+
+        1. INT (size)
+        2. FLOAT (size)
+        3.  DOUBLE (size)
+    
+    *** DATE, TIME  RELATED DATA Type
+        1. DATE
+        2. DATETIME
+        3. TIMESTAMP
+        4. YEAR
+
+
+                            Module 3.7 Syntax
+
+            CREATE, RENAME, DROP Table
+        1. Not case sensitive
+        2. Semicolon দিতে হবে।
+        3. One Line / multiple line দুইভাবে লেখা যায়।
+
+Example:
+        1.      CREATE TABLE tablename(
+
+                        write context......
+                );
+        2. CREATE TABLE tablename(
+                Roll Int;
+                Lastname VARCHAR(100);
+                Firstname  VARCHAR(20);
+                Address VARCHAR(40);
+            );
+
+
+                DATABASE use Syntax
+
+        USE database databasename;
+
+                To show database
+
+        SHOW Database
