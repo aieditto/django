@@ -13,4 +13,3 @@ print(anis.holder_name)
 anis.deposit(4000)
 print(anis.get_balance())
 
-ro dkte hbe
