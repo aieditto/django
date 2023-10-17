@@ -442,3 +442,20 @@ For example:
             SELECT  *  FROM Products
             WHERE Price>=9.00
             Order by Price asc;
+
+
+
+            Module 7.2 Group Function
+
+                    Skip
+            
+            
+            Module 9.2 Select, DROP, DELETE, TRUNCATE
+
+SELECT statement mainly use for showing data table
+
+DROP: Drop Statement use for deleting full table
+
+DELETE: Delete use for deleting single table field or row
+
+Truncate: Truncate use for deleting all row data without delete table
