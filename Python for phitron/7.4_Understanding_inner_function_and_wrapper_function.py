@@ -5,6 +5,15 @@ def double_decker():
         print('inside the inner')
         # return 3000
     return inner_fun
-print(double_decker()())
+
+def func(double_decker):
+    print('Alpha Alpha')
+    double_decker()
+    print('Beta')
+
+def pentu():
+    print('decorator way or wrapper function')
+#print(double_decker()()) #calling the inner fucntion using double ()
+func(pentu)
 
 #decorator
