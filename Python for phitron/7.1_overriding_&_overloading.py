@@ -42,15 +42,19 @@ class Myself(Person):
     def eat(self):  #this function overriding the main class function
         print('Birani')
     
+    # + sign overload
     def __add__(self, other):
         return self.age+other.age
     
+    # - sign overload
     def __sub__(self,other):
         return self.age-other.age
     
+    # * sign overload
     def __mul__(self,other):
         return self.age*other.age
     
+     # > sign overload
     def __gt__(self,other):
         return self.age>other.age
 
