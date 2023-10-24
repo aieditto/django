@@ -927,3 +927,413 @@ print(f'Here is area of {circle.name} {circle.area()}')
 rectangle=Rectangle('Rectangle', 20, 4)
 print(f'Here is area of {rectangle.name} {rectangle.area()}')
     
+
+
+                        Module 7.1. Overloading & Overriding
+
+    #Example for Overriding
+"""
+class Person:
+    def __init__(self, name, age, height, weight) -> None:
+        self.name=name
+        self.age=age
+        self.height=height
+        self.weight=weight
+    
+    def eat(self):
+        print('Food for ordinary')
+
+class Myself(Person):
+    def __init__(self, name, age, height, weight, team) -> None:
+        self.team=team
+        super().__init__(name, age, height, weight)
+        
+    def eat(self):  #this function overriding the main class function
+        print('Birani')
+
+
+Anis=Myself('Anis', 23, 57, 75, 'B')
+Anis.eat()
+"""
+
+#Example for Overloading
+class Person:
+    def __init__(self, name, age, height, weight) -> None:
+        self.name=name
+        self.age=age
+        self.height=height
+        self.weight=weight
+    
+    def eat(self):
+        print('Food for ordinary')
+
+class Myself(Person):
+    def __init__(self, name, age, height, weight, team) -> None:
+        self.team=team
+        super().__init__(name, age, height, weight)
+        
+    def eat(self):  #this function overriding the main class function
+        print('Birani')
+    
+    # + sign overload
+    def __add__(self, other):
+        return self.age+other.age
+    
+    # - sign overload
+    def __sub__(self,other):
+        return self.age-other.age
+    
+    # * sign overload
+    def __mul__(self,other):
+        return self.age*other.age
+    
+     # > sign overload
+    def __gt__(self,other):
+        return self.age>other.age
+
+
+Anis=Myself('Anis', 23, 57, 75, 'B')
+Sakiya=Myself('Sakiya', 22, 54, 65, 'B')
+print(Anis+Sakiya)
+print(Anis-Sakiya)
+print(Anis*Sakiya)
+print(Anis>Sakiya)
+
+
+"""
+Other method are here:
+
+
+
+    Initialization and Construction
+
+        __new__: To get called in an object’s instantiation.
+        __init__: To get called by the __new__ method.
+        __del__: It is the destructor.
+
+    Numeric magic methods
+
+        __trunc__(self): Implements behavior for math.trunc()
+        __ceil__(self): Implements behavior for math.ceil()
+        __floor__(self): Implements behavior for math.floor()
+        __round__(self,n): Implements behavior for the built-in round()
+        __invert__(self): Implements behavior for inversion using the ~ operator.
+        __abs__(self): Implements behavior for the built-in abs()
+        __neg__(self): Implements behavior for negation
+        __pos__(self): Implements behavior for unary positive 
+
+    Arithmetic operators
+
+        __add__(self, other): Implements behavior for math.trunc()
+        __sub__(self, other): Implements behavior for math.ceil()
+        __mul__(self, other): Implements behavior for math.floor()
+        __floordiv__(self, other): Implements behavior for the built-in round()
+        __div__(self, other): Implements behavior for inversion using the ~ operator.
+        __truediv__(self, other): Implements behavior for the built-in abs()
+        __mod__(self, other): Implements behavior for negation
+        __divmod__(self, other): Implements behavior for unary positive 
+        __pow__: Implements behavior for exponents using the ** operator.
+        __lshift__(self, other): Implements left bitwise shift using the << operator.
+        __rshift__(self, other): Implements right bitwise shift using the >> operator.
+        __and__(self, other): Implements bitwise and using the & operator.
+        __or__(self, other): Implements bitwise or using the | operator.
+        __xor__(self, other): Implements bitwise xor using the ^ operator.
+
+    String Magic Methods
+
+        __str__(self): Defines behavior for when str() is called on an instance of your class.
+        __repr__(self): To get called by built-int repr() method to return a machine readable representation of a type.
+        __unicode__(self): This method to return an unicode string of a type.
+        __format__(self, formatstr): return a new style of string.
+        __hash__(self): It has to return an integer, and its result is used for quick key comparison in dictionaries.
+        __nonzero__(self): Defines behavior for when bool() is called on an instance of your class. 
+        __dir__(self): This method to return a list of attributes of a class.
+        __sizeof__(self): It return the size of the object.
+
+    Comparison magic methods
+
+        __eq__(self, other): Defines behavior for the equality operator, ==.
+        __ne__(self, other): Defines behavior for the inequality operator, !=.
+        __lt__(self, other): Defines behavior for the less-than operator, <.
+        __gt__(self, other): Defines behavior for the greater-than operator, >.
+        __le__(self, other): Defines behavior for the less-than-or-equal-to operator, <=.
+        __ge__(self, other): Defines behavior for the greater-than-or-equal-to operator, >=.
+
+
+
+"""
+
+
+                                    7.2 Static Attribute
+
+                                    SKIP
+
+
+                                    Module 7.3 Getter & Setter
+                
+# """
+#     1. Read only ----> you cannot set the value. value cannot be changed.
+#     2. getter --> get a value of a property. Most of the time you will get the value of a privete attribute.
+#     3. setter---> set a value of a property through a method, Most of the time, you will set the value of a private property.
+# """
+# class User:
+#     def __init__(self, name, age, money ) -> None:
+#         self._name=name #protected variable
+#         self._age=age #protected variable
+#         self.__money= money #private variable
+#     @property #this is getter property by default read only attribute.
+#     def age(self):
+#         return self._age
+    
+#     @property
+#     def salary(self):
+#         return self.__money
+    
+#     @salary.setter  #this is "setter" attribute. For setting setter attribute first you have to mention the method name which have to set setter that .setter
+#     def salary(self, value):
+#         if value<0:
+#             return f'you have not enough money!'
+        
+#         else: 
+#              self.__money+=value
+        
+    
+# samsu = User('Anis', 23, 12000)
+
+# # print(samsu.__money)
+# #print(samsu.age()) 
+# """now this age is behaving like method 
+# but if we need to call it like a attribute than we can use 
+# ""  @property ""  upon on that method
+# """
+# print(samsu.age) 
+# print(samsu.salary)
+# samsu.salary=500
+# print(samsu.salary)
+
+class User:
+    def __init__(self, name, age, money) -> None:
+        self._name=name
+        self._age=age
+        self.__money=money
+    @property
+    def age(self):
+        return self._age
+    
+    @property
+    def salary(self):
+        return self.__money
+    
+    @salary.setter
+    def salary(self, value):
+        if value<0:
+            return f'Ami Fokir'
+        else:
+            self.__money+=value
+
+Anis= User('Anis', 23, 12000)
+print(Anis.age)
+print(Anis.salary)
+Anis.salary=1200
+print(Anis.salary)
+
+
+                            MOdule 7.4 Understaing Wrapper function and Inner funciton
+
+#function is a first class object
+def double_decker():
+    print('starting the double decker')
+    def inner_fun():
+        print('inside the inner')
+        # return 3000
+    return inner_fun
+
+def func(double_decker):
+    print('Alpha Alpha')
+    double_decker()
+    print('Beta')
+
+def pentu():
+    print('decorator way or wrapper function')
+#print(double_decker()()) #calling the inner fucntion using double ()
+func(pentu)
+
+#decorator
+
+
+                        Module 7.5 How does decorator work
+
+ def functionn(hbd):
+    def innerfunc():
+        print('Alif Laila')
+        hbd()
+        print('Chomolokko')
+    return innerfunc
+@functionn  #easy mehtod to use decorator
+def get_factorial():
+    print('factorial starting')
+
+get_factorial()
+
+"""Without decorator if i call
+    the below function it will give
+    the out put of himself. But when using @and_mention_the_main_function
+    then the main function will call and a argument pass from the second_function()
+    after that the main fucntion will receive as parameter then it will show the result. 
+"""    
+
+                    
+                    Module 7.6 Class Composition Inheritance vs Composition
+
+# Inheritance and composition are two fundamental concepts in object-oriented programming that allow you to design and structure your code. They serve different purposes and have their own advantages and use cases. Let's explore both concepts:
+# Inheritance:
+
+#     Inheritance is an "is-a" relationship where one class derives properties and behaviors from another class. It allows you to create a new class based on an existing class, inheriting its attributes and methods.
+#     The new class (subclass or derived class) can extend or modify the behavior of the existing class (base class or superclass) and also add its own attributes and methods.
+#     Inheritance promotes code reusability by allowing you to use and build upon existing classes. It can help you model hierarchies and relationships between objects.
+#     However, it can lead to tight coupling between classes, making the code harder to maintain and less flexible, especially if the inheritance hierarchy becomes deep and complex.
+
+# Example:
+
+# python
+
+# class Vehicle:
+#     def __init__(self, wheels):
+#         self.wheels = wheels
+
+# class Car(Vehicle):
+#     def __init__(self, wheels, brand):
+#         super().__init__(wheels)
+#         self.brand = brand
+
+# Composition:
+
+#     Composition is a "has-a" relationship that allows you to create complex objects by combining and using instances of other classes. It involves creating objects of one class within another class.
+#     Composition promotes flexibility and loose coupling, as you can change the behavior of a class by swapping out its components without affecting the entire class.
+#     It's often more suitable when you need to build complex systems with reusable components. Composition is favored over inheritance when designing for flexibility and maintainability.
+
+# Example:
+
+# python
+
+#     class Engine:
+#         def start(self):
+#             print("Engine started")
+
+#     class Car:
+#         def __init__(self):
+#             self.engine = Engine()
+
+#         def drive(self):
+#             print("Driving the car")
+#             self.engine.start()
+
+# In summary, the choice between inheritance and composition depends on your design goals. If you want to create a hierarchy of closely related classes with shared characteristics, inheritance can be appropriate. If you want to build flexible, maintainable, and loosely coupled systems, composition is often a better choice. In practice, a combination of both inheritance and composition is frequently used to achieve the desired design and code structure.
+
+# other example: https://www.geeksforgeeks.org/inheritance-and-composition-in-python/
+
+
+# class Animal:
+#     pass
+
+# """"Inheritance provides you is a relation
+
+#     composition:
+# """
+# #Dog is an animal
+# class Dog(Animal):
+#     pass
+# #Dog is an animal
+# class Tiger(Animal):
+#     pass
+
+# class Furniture:
+#     pass
+
+# #chair is a furniture
+# class Chair(Furniture):
+#     pass
+
+# class Table(Furniture):
+#     pass
+
+
+# """Composition"""
+# #Example for compostition
+# class Engine:
+#     def __init__(self) -> None:
+#         pass
+    
+#     def start(self):
+#         return "Engine Started"
+
+
+# class Driver:
+#     def __init__(self) -> None:
+#         pass
+    
+# class Car:
+#     def __init__(self) -> None:
+#         self.engine=Engine()
+#         self.driver=Driver()
+    
+#     def start(self):
+#         self.engine.start()
+
+class CPU:
+    def __init__(self, core) -> None:
+        self.core=core
+
+class RAM:
+    def __init__(self, size) -> None:
+        self.size=size
+
+class HardDrive:
+    def __init__(self, capacity) -> None:
+        self.capacity=capacity
+
+class Computer:
+    def __init__(self, core, ram_size, hd_capacity) -> None:
+        self.cpu=CPU(core)
+        self.ram=RAM(ram_size)
+        self.hard_disc=HardDrive(hd_capacity)
+        
+mac=Computer(4,8,512)
+print( f'The cpu size is {mac.cpu.core}, Hard Disk:{mac.hard_disc.capacity} Ram size: {mac.ram.size}')
+
+#Other way:
+# # Define the values you want to set for CPU cores, RAM size, and hard drive capacity
+# core_count = 4  # Number of CPU cores
+# ram_size_gb = 16  # RAM size in gigabytes
+# hd_capacity_gb = 512  # Hard drive capacity in gigabytes
+
+# # Create a Computer object with the specified values
+# my_computer = Computer(core_count, ram_size_gb, hd_capacity_gb)
+
+# # Access the components of the computer
+# print("CPU Cores:", my_computer.cpu.core)
+# print("RAM Size (GB):", my_computer.ram.size)
+# print("Hard Drive Capacity (GB):", my_computer.hard_disc.capacity)
+
+
+
+
+
+                                            Module 7.7 UML design
+
+UML is mainly use for making the pictorial allignment design how class are interect with other class and object. This
+is use for software designing. 
+
+
+    UML stands for Unified Modeling Language.
+
+    UML is different from the other common programming languages such as C++, Java, COBOL, etc.
+
+    UML is a pictorial language used to make software blueprints.
+
+    UML can be described as a general purpose visual modeling language to visualize, specify, construct, and document software system.
+
+    Although UML is generally used to model software systems, it is not limited within this boundary. It is also used to model non-software systems as well. For example, the process flow in a manufacturing unit, etc.
+
+For more: 
+https://www.tutorialspoint.com/uml/uml_building_blocks.htm
