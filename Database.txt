@@ -459,3 +459,21 @@ DROP: Drop Statement use for deleting full table
 DELETE: Delete use for deleting single table field or row
 
 Truncate: Truncate use for deleting all row data without delete table
+
+
+                    
+                    Module 10-3 Doing using Join
+
+To join two or more table we have to use "JOIN" and  "USING" keyword 
+For example:
+
+        use hr;
+        SELECT e.employee_id, e.first_name, d.department_id
+        FROM   employees e JOIN  departments d USING (department_id); 
+    
+Another way:
+To join two or more table we have to use "JOIN" and  "ON" keyword
+
+        use hr;
+        SELECT employees.employee_id, employees.first_name, departments.department_id
+        FROM   employees  JOIN  departments  ON (employees.department_id = departments.department_id); 
