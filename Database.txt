@@ -477,3 +477,28 @@ To join two or more table we have to use "JOIN" and  "ON" keyword
         use hr;
         SELECT employees.employee_id, employees.first_name, departments.department_id
         FROM   employees  JOIN  departments  ON (employees.department_id = departments.department_id); 
+
+
+
+
+                            Module 10-4 Self Join
+        
+        Self join means comparing and connection between same table to show the expected RESULT
+
+        For Example:
+
+        SELECT e.employee_id, e.first_name as employee_id, m.manager_id, m.first_name as manager_name
+        FROM employees e JOIN employees m ON(e.employee_id = m.manager_id);
+
+        Result:
+        manager_id      manager_name    employee_id     employee_name
+        100	            Steven	        100	            Neena
+        100	            Steven	        100	            Lex
+        102	            Lex	            102	            Alexander
+        103	            Alexander	    103	            Bruce
+
+        when SELF JOIN  ON must be use Using cannot be use there for the limitation
+
+
+                    Module: 10-5 Inner, Left, Right, Full Join
+        
