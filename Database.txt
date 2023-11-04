@@ -501,4 +501,18 @@ To join two or more table we have to use "JOIN" and  "ON" keyword
 
 
                     Module: 10-5 Inner, Left, Right, Full Join
-        
+        Inner Example: 
+        select  e.first_name, d.department_name
+        From employees e INNER JOIN departments d ON(e.manager_id=d.manager_id) ;
+
+        Left Example:
+        select  e.first_name, d.department_name
+        From employees e LEFT JOIN departments d ON(e.manager_id=d.manager_id) ;
+
+        Right Example:
+        SELECT  e.first_name, d.department_name
+        From employees e RIGHT JOIN departments d ON(e.manager_id=d.manager_id) ;
+
+        FUll JOIN Example
+        SELECT  e.first_name, d.department_name
+        From employees e FULL JOIN departments d ON(e.manager_id=d.manager_id) ;
