@@ -252,10 +252,10 @@ Example:
                         write context......
                 );
         2. CREATE TABLE tablename(
-                Roll Int;
-                Lastname VARCHAR(100);
-                Firstname  VARCHAR(20);
-                Address VARCHAR(40);
+                Roll Int,
+                Lastname VARCHAR(100),
+                Firstname  VARCHAR(20),
+                Address VARCHAR(40),
             );
 
 
@@ -516,3 +516,50 @@ To join two or more table we have to use "JOIN" and  "ON" keyword
         FUll JOIN Example
         SELECT  e.first_name, d.department_name
         From employees e FULL JOIN departments d ON(e.manager_id=d.manager_id) ;
+
+
+                        Module 11.3 Mysql Set Operation
+
+UNION, UNION ALL, MINUS
+
+UNION take 
+
+            CREATE TABLE STUDENT_PROFILE(
+            Student_Id INT,
+            Student_Name VARCHAR(30)
+            );
+            CREATE TABLE TEACHER_PROFILE(
+            Teacher_Id INT,
+            Teacher_Name VARCHAR(30)
+            );
+            use school;
+            DROP Table Student_Profile;
+            DROP Table Teacher_Profile;
+            Select * From STUDENT_PROFILE;
+            Select * From TEACHER_PROFILE;
+            INSERT INTO Student_Profile(Student_Id, Student_Name)
+            VALUES(101, "Kuddus");
+            INSERT INTO Student_Profile(Student_Id, Student_Name)
+            VALUES(102, "Jadu");
+            INSERT INTO Student_Profile(Student_Id, Student_Name)
+            VALUES(103, "Nikal Lawde");
+
+            INSERT INTO Teacher_Profile(Teacher_Id, Teacher_Name)
+            VALUES(456, "Keramot");
+            INSERT INTO Teacher_Profile(Teacher_Id, Teacher_Name)
+            VALUES(743, "Sulubuol");
+            INSERT INTO Teacher_Profile(Teacher_Id, Teacher_Name)
+            VALUES(235, "Chutia Hokiya?");
+UNION:
+            SELECT Student_id
+            FROM Student_profile
+            UNION
+            SELECT Teacher_id
+            FROM Teacher_profile;
+
+UNION ALL:
+            SELECT Student_id
+            FROM Student_profile
+            UNION ALL
+            SELECT Teacher_id
+            FROM Teacher_profile;
