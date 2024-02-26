@@ -41,6 +41,8 @@ We create apps for distributing the project code
 it will help to run the code faster, understandable also
 less time consume etc.
 
+
+Module 1.8 Creating An App
 Create Apps:
 1. django-admin startproject project_name
 2. cd project_name
