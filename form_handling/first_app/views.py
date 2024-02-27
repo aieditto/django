@@ -11,6 +11,7 @@ def form(request):
     return render (request,'form.html')
 
 def form_data(request):
+    print(request.POST)
     if request.method == 'POST':
         name= request.POST.get('name')
         email= request.POST.get('email')
