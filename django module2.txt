@@ -320,7 +320,7 @@ thats why I have to goto
         catching the value of send from front end. and then it will show the info at terminal.
 
         1. then write a condition on a function 
-             if request.method=="POST":
+             if request.method=="POST/GET": //POST use for privacy beacuse it cant show on link but GET do
                 name=request.POST.get('username')  
                 email=request.POST.get('email')  
                 return render (request,'./seventh_apps/about.html', {'name': name, 'email': email})
