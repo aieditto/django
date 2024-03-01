@@ -18,3 +18,4 @@ def form_data(request):
         return render(request,'form_data.html',{'name':name, 'email':email})
     else:
         return render(request,'form_data.html')
+    
