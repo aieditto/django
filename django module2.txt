@@ -348,6 +348,45 @@ thats why I have to goto
 
 
 Project form handling 4.3 Introduction to Django Built in Forms
+How to create FORM api where no need to write html file just django 
+Step: 1
+First create a file with the name of **** forms.py **** this is use for 
+then write there
+
+from django import forms                        # Importing necessary module 'forms' from the Django framework
+class ContactForm(forms.Form):                  # Defining a class 'ContactForm' which inherits from 'forms.Form'
+    name = forms.CharField(label="Username")    # Defining a field 'name' of type CharField with a label "Username" 
+    email = forms.EmailField()                  # Defining a field 'email' of type EmailField
+    
+Step-2: 
+Goto urls.py and write there 
+
+path('django_form/',views.django_form,name="django_form")   #this are connecting with the views.py 
+
+Step-3:
+Goto views.py and  write there 
+from . forms import ContactForm     #here ContactForm are importing from the forms.py
+def django_form(request):   #function define
+    form = ContactForm()  #contactform value are store here
+    return render (request,"django_form.html",{'form':form})  #then return to django_form.html
+
+Step-4:
+Goto  templates folder -> create a html folder named "django_form.html"
+
+write There
+write a html code
+<form method="POST">
+{% csrf_token %}
+{{form}}            //this are passing the value from views.py
+{{form.as_p}}  //as_p use for paragraph setting
+<button class="btn btn-outline-success" type="submit">Submit</button>
+</form>
+
+Now.....
+to show the value which are input from the frontend
+form = ContactForm(request.POST) #to show the value from website write here between the braces  request.POST
+    if form.is_valid():   // if any value are submited then it will be true and print that 
+        print(form.cleaned_data)
 
 
 
