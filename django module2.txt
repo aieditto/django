@@ -347,7 +347,9 @@ thats why I have to goto
 
 
 
-Project form handling 4.3 Introduction to Django Built in Forms
+$#$@#@ Project form handling &*#@#@ 
+
+4.3 Introduction to Django Built in Forms
 How to create FORM api where no need to write html file just django 
 Step: 1
 First create a file with the name of **** forms.py **** this is use for 
@@ -389,6 +391,45 @@ form = ContactForm(request.POST) #to show the value from website write here betw
         print(form.cleaned_data)
 
 
+
+Module  4.4 Adding Crispy Forms in Django
+
+To add bootstrap  theme we need to install crispy forms first
+
+first install this: pip install crispy-bootstrap5
+then goto settings.py and add these on installed app
+
+    "crispy_forms",
+    "crispy_bootstrap5",
+
+then goto that html file which are added as form
+so goto there  and write
+
+<form method="POST">
+    {% load crispy_forms_tags %}   //importing crispy_forms_tags
+    {% csrf_token %}
+    {{form | crispy }}  // this thing add crispy with the form
+     <!-- {{form.as_p}} -->
+     <button class="btn btn-outline-success" type="submit">Submit</button>
+ </form>
+
+
+Module 4.5 and 4.6 Some Built in FormFields Part 1 and 2
+
+  name=forms.CharField(label="Username")
+    email=forms.EmailField()
+    age=forms.DateField()
+    check =forms.BooleanField()
+    FOOD= [('B','Burger'),('M','Momos'), ('Bir','Biriani')]
+    food=forms.MultipleChoiceField(choices=FOOD)
+
+
+Module 5.1 Introduction to Django Models
+
+ORM (Object Relational Mapper) is a technique that helps to interect 
+between database such as SQL, MYSQL, SQlite, Oracle
+
+QuerySet: A list of object that helps to create a database that is called QuerySet.
 
 
 
