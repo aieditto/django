@@ -463,7 +463,31 @@ then run on terminal:
         $ python manage.py migrate
 
         this will create a file on migrations folder. 
-        
 
+5.3 manual way by software
 
+5.4 Creating Superuser and Accessing Admin Panel
 
+to enter admin panel  we have to create super user first then access it.
+$python manage.py createsuperuser
+
+user: aieditto
+pass: md123698741
+
+to show the model to admin panel on website
+open admin.py file from /admin/app
+and add following line of code
+
+goto admin.py
+
+then write there: 
+
+from .import models
+admin.site.register(models.model_name)
+
+then goto website you can see that.
+If you want to show  all fields in admin panel then just use:
+
+def __str__(self):
+    return self.name
+    this is a method which returns string representation of object.
