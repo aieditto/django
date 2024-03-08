@@ -1,13 +1,12 @@
-from django.db import models 
+from django.db import models
 
+# Create your models here.
 class Student(models.Model):
-    name = models.CharField(max_length=20)
-    roll=models.IntegerField(primary_key=True)
-    mobile=models.IntegerField()
-    subject_name=models.CharField(default="Java",max_length=20)
+    roll=models.IntegerField(primary_key=True, unique=True)
+    name=models.CharField(max_length=40)
+    subject_name=models.CharField(max_length=50)
+    college_name=models.CharField(max_length=50)
+    mobile=models.IntegerField(unique=True)
     
     def __str__(self):
-        return  f'Student Name: {self.name}, Roll: {self.roll}' 
-        
-    
-    
+        return f'Roll: {self.roll}, Name: {self.name}, Mobile: {self.mobile}'
