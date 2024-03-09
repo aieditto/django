@@ -491,3 +491,80 @@ If you want to show  all fields in admin panel then just use:
 def __str__(self):
     return self.name
     this is a method which returns string representation of object.
+
+
+
+                Module 5.5 Showing Model data to frontend
+
+If you want to show your data to the front end as a table
+you need to make some changes in views.py
+views.py :
+First,
+import render from django.shortcuts import render
+then,
+    write: from .import models // because i have to import the models
+
+   after that need to take a variable:
+                            variable_name= models.models_name.objects.all()
+
+                            //here  objects means get all records from database
+                            Then pass it into template using render function like
+
+then if you need to show the  data in terminal you can print that by print(variable_name)
+
+Second,
+     return render(request,'home.html',{'variable_name':variable_name})
+
+     // return the variable as a list
+
+Third,
+    go to template file and write there:
+    {% if variable_name %} //if student variable has any data then goto next step
+
+    {% for i in variable_name %}
+    <tr>
+        <td>{i.name}</td>
+        <td>{i.roll}</td>
+        <td>{i.mobile}</td>
+        <td>{i.subject_name}</td>
+        <td>{i.fathers_name}</td>
+    </tr>
+    {% endfor %}
+    {% else %}
+    {% endif %}
+
+
+
+Module 5.6 Deleting Model Data From Frontend
+
+on home.html write there with anchor tag:
+
+<td><a type="button" class="btn btn-danger" href="">Delete</a> </td>
+
+then go to views.py and write there a function 
+
+def delete_student(request,roll)                    // roll are the primary key thats why to make a link                                 
+    student_delete = models.Student.objects.get(primary_key = roll)  
+    print(student_delete)
+                                                 ////models.Student: Refers to the Student model defined in Django's models.py file.
+                                                .objects: Represents the manager through which database queries are performed on the Student model.
+                                                .get(primary_key=roll): This method retrieves a single Student object from the database where the value of the primary key field (primary_key) matches the value of roll.
+                                                It's assumed that primary_key is the name of the primary key field in the Student model.
+                            
+                                                                                                                        In summary, this lin fetches a single Student object from the database based on the value of its primary key (roll).
+then,
+goto  urls.py and write there
+
+path('delete_student/<int:roll>',views.delete_student, name='delete_student')
+
+again goto views.py
+
+write 
+from django.shortcuts import render, redirect
+
+def delete_student(request, roll):
+    student_delete=models.Student.objects.get(pk= roll).delete()
+    # students=models.Student.objects.all()
+    print(student_delete)
+    # return render (request,'home.html',{'students':students})
+    return redirect('homepage')
