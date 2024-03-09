@@ -424,12 +424,46 @@ Module 4.5 and 4.6 Some Built in FormFields Part 1 and 2
     food=forms.MultipleChoiceField(choices=FOOD)
 
 
+Project: model_practice
+
 Module 5.1 Introduction to Django Models
 
 ORM (Object Relational Mapper) is a technique that helps to interect 
 between database such as SQL, MYSQL, SQlite, Oracle
 
 QuerySet: A list of object that helps to create a database that is called QuerySet.
+
+                        MODEL
+Model contain essential fields and behaviors of the data.
+each model maps to a single database table.
+
+Model class is a class which will represent a table in database.
+
+
+
+Module 5.2 Creating a Model in Django
+
+to creating a model or database
+we need to follow these steps :
+Write  our code inside models.py file
+
+from django.db import models
+
+class class_name(models.Model):
+    field_name = models.field_type()
+    for example:
+    name = models.CharField(max_length=20)
+    roll = models.IntegerField()                // for integer no value need
+
+then run on terminal:
+        $ python manage.py makemigrations   // this command will generate the sql query according to your
+        $ python manage.py migrate             // model definition then it will apply those queries into your database
+        // defined model into another folder named
+        // migrations under app directory
+        $ python manage.py migrate
+
+        this will create a file on migrations folder. 
+        
 
 
 
