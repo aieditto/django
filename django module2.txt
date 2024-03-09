@@ -568,3 +568,17 @@ def delete_student(request, roll):
     print(student_delete)
     # return render (request,'home.html',{'students':students})
     return redirect('homepage')
+
+
+5.7 Introduction to Model Form in Django
+
+Meta class is kind of nested class
+to change the behavoiur of other class Meta class is used 
+
+5.8 Creating form using Model Form
+
+important and shortcut:      
+**********    you can shortcutly call link                                  ********
+**********                                                                  ********
+**********  from first_app.views import home, delete_student, many more...  ********
+*********************************************************************************
