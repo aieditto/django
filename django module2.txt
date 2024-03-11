@@ -582,3 +582,5 @@ important and shortcut:
 **********                                                                  ********
 **********  from first_app.views import home, delete_student, many more...  ********
 *********************************************************************************
+
+
