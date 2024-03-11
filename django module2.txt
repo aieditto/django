@@ -582,5 +582,41 @@ important and shortcut:
 **********                                                                  ********
 **********  from first_app.views import home, delete_student, many more...  ********
 *********************************************************************************
+<<<<<<< HEAD
 
 
+=======
+create file name with forms.py then goto  forms.py
+after that write there
+
+from django import forms  //importing forms  module
+from second_app.models import  StudentModel  //importing StudentModel from the models.py file 
+now,
+    create a modelform class  inside the forms.py by writing below code :
+     
+     class StudentForm(forms.ModelForm):
+        class Meta:             //meta class use for writing the characteristics of other class
+            model = StudentModel   //linking our data base table with this class
+            fields = '__all__'     //it will show all field of the database table in
+            or
+            fields= [
+                'roll', 'name', 'fathers_name', 'contact_number'
+            ]
+            
+        labels={
+            'roll' : "Roll Number",
+            'name' : 'User Name',
+            'fathers_name':"Father's Name",
+        }
+        widgets={
+            'roll' : forms.TextInput(attrs={'class' : 'btn-primary'}),
+            'name': forms.PasswordInput()
+        }
+         help_texts={
+            'name':'This is the username of user',
+            'roll':'Confirm your roll'
+        }
+        error_messages={
+            'name': {'required':'your name is required'}
+        }
+>>>>>>> 81dce627af152099690ae0a954d95a368f76300b
