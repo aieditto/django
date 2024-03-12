@@ -582,6 +582,10 @@ important and shortcut:
 **********                                                                  ********
 **********  from first_app.views import home, delete_student, many more...  ********
 *********************************************************************************
+<<<<<<< HEAD
+
+
+=======
 create file name with forms.py then goto  forms.py
 after that write there
 
@@ -615,3 +619,4 @@ now,
         error_messages={
             'name': {'required':'your name is required'}
         }
+
