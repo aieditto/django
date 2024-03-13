@@ -543,13 +543,13 @@ Third,
     # go to template file and write there:
     {% if variable_name %} //if student variable has any data then goto next step
 
-    {% for i in variable_name %}
+    {% for i in variable_name_of_model_variable %}
     <tr>
-        <td>{i.name}</td>
-        <td>{i.roll}</td>
-        <td>{i.mobile}</td>
-        <td>{i.subject_name}</td>
-        <td>{i.fathers_name}</td>
+        <td>{{i.name}}</td>
+        <td>{{i.roll}}</td>
+        <td>{{i.mobile}}</td>
+        <td>{{i.subject_name}}</td>
+        <td>{{i.fathers_name}}</td>
     </tr>
     {% endfor %}
     {% else %}

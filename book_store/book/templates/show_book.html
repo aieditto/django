@@ -2,5 +2,35 @@
 {% block title %}Show Books{% endblock %}
 {% block heading %}View Your Books Here!{% endblock %}
 {% block content %}
-{{form}}
+
+<div>
+    <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Book Name</th>
+            <th scope="col">Author Name</th>
+            <th scope="col">Category</th>
+            <th scope="col">First Publication</th>
+            <th scope="col">Last Publication</th>
+          </tr>
+        </thead>
+        <tbody>
+            {% if books %}
+                {% for i in books%}
+                <tr>
+                    <td>{{i.id}}</td>
+                    <td>{{i.book_name}}</td>
+                    <td>{{i.author}}</td>
+                    <td>{{i.category}}</td>
+                    <td>{{i.first_pub}}</td>
+                    <td>{{i.last_pub}}</td>
+                </tr>
+                {% endfor %}
+            {% else %}
+            <h1>No Data Found</h1>
+            {% endif %}
+        </tbody>
+      </table>
+</div>
 {% endblock %}
