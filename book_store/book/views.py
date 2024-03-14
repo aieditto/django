@@ -22,7 +22,6 @@ def show_book(request):
     books = Bookstoremodel.objects.all()
     return render(request, 'show_book.html', {'books': books})
 
-
 def book_edit(request,id):
     book_model=Bookstoremodel.objects.get(pk=id)
     book_form=BookStoreForm(instance=book_model)
