@@ -22,3 +22,19 @@ def show_book(request):
     books = Bookstoremodel.objects.all()
     return render(request, 'show_book.html', {'books': books})
 
+
+def book_edit(request,id):
+    book_model=Bookstoremodel.objects.get(pk=id)
+    book_form=BookStoreForm(instance=book_model)
+    if request.method=='POST':
+        book=BookStoreForm(request.POST, instance=book_model)
+        if book.is_valid():
+            book.save()
+            print(book.cleaned_data, f'data has been updated')
+            return redirect('show_book')
+    return render(request,'store_book.html',{'form':book_form})
+    
+def delete_data(request,id):
+    book_model=Bookstoremodel.objects.get(pk=id).delete()
+    return redirect('show_book')
+    
