@@ -646,7 +646,101 @@ now,
 
 '   Module-6-Book Store project
 
-editing data:
-    
-    why instance use?
-    instance use for to catched the data from the model through any id or identity
+        editing data:
+            
+            why instance use?
+            instance use for to catched the data from the model through any id or identity
+
+"views.py
+                    from django.shortcuts import render, redirect
+                    from book.forms import BookStoreForm  # Importing the BookStoreForm from forms.py
+                    from book.models import Bookstoremodel  # Importing the Bookstoremodel from models.py
+                    # Create your views here.
+        'This function use for storing data from the form
+                    def store_book(request):
+                        if request.method == 'POST':  # Checking if the request method is POST
+                            book = BookStoreForm(request.POST)  # Creating a BookStoreForm instance with POST data
+                            if book.is_valid():  # Checking if the form data is valid
+                                book.save()  # Saving the form data to the database
+                                print(book.cleaned_data)  # Printing cleaned form data to console
+                                return redirect('show_book')  # Redirecting to the 'show_book' URL
+                        else:
+                            book = BookStoreForm()  # Creating a blank BookStoreForm instance for GET requests
+                        return render(request, 'store_book.html', {'form': book})  # Rendering the form in the template
+        
+        'This function use for showing the data from the form
+                    def show_book(request):
+                        books = Bookstoremodel.objects.all()  # Querying all Bookstoremodel objects from the database
+                        return render(request, 'show_book.html', {'books': books})  # Rendering the books in the template
+
+
+        'This function use for editing the data which are already store on model database
+                    def book_edit(request, id):
+                        book_model = Bookstoremodel.objects.get(pk=id)  # Getting a specific Bookstoremodel object by primary key (id)
+                        book_form = BookStoreForm(instance=book_model)  # Creating a form instance with existing model data
+                        if request.method == 'POST':  # Checking if the request method is POST
+                            book = BookStoreForm(request.POST, instance=book_model)  # Creating form instance with POST data and existing model instance
+                            if book.is_valid():  # Checking if the form data is valid
+                                book.save()  # Saving the updated form data to the database
+                                print(book.cleaned_data, f'data has been updated')  # Printing cleaned form data to console
+                                return redirect('show_book')  # Redirecting to the 'show_book' URL
+                        return render(request, 'store_book.html', {'form': book_form})  # Rendering the form in the template
+
+        'This function use for deleting the data which are already store on model database
+                    def delete_data(request, id):
+                        book_model = Bookstoremodel.objects.get(pk=id)  # Getting a specific Bookstoremodel object by primary key (id)
+                        book_model.delete()  # Deleting the specific Bookstoremodel object from the database
+                        return redirect('show_book')  # Redirecting to the 'show_book' URL after deletion
+
+
+"urls.py: 
+            from django.urls import path
+
+            from book.views import store_book,show_book,book_edit,delete_data
+
+            urlpatterns=[
+                path('',store_book,name='store_book'),  
+                path('show_book/',show_book,name='show_book'),
+                path('book_edit/<int:id>',book_edit, name='book_edit'), 
+                path('delete_data/<int:id>',delete_data, name='delete_data')  
+            ]
+            
+
+'models.py:
+                from django.db import models
+
+                class Bookstoremodel(models.Model):
+                    CATEGORY = [
+                        ('Thriller', 'Thriller'),
+                        ('Comics', 'Comics'),
+                        ('Romantic', 'Romantic'),
+                        ('Educational', 'Educational'),
+                        ('Sci-fi', 'Sci-fi')
+                    ]
+                    id = models.IntegerField(primary_key=True)
+                    book_name = models.CharField(max_length=30)
+                    author = models.CharField(max_length=30)
+                    category = models.CharField(max_length=30, choices=CATEGORY)
+                    first_pub = models.DateTimeField(auto_now_add=True)
+                    last_pub = models.DateTimeField(auto_now=True)
+                    
+                    def __str__(self):
+                        return f'ID: {self.id} , Author: {self.author} '
+
+'forms.py:
+                from django import forms
+                from book.models import Bookstoremodel
+                class BookStoreForm(forms.ModelForm):
+                    class Meta:
+                        model=Bookstoremodel
+                        fields= [
+                            'id',
+                            'book_name', 'author', 'category'
+                        ]
+                        
+'admin.py:
+                    from django.contrib import admin
+                    from book.models import Bookstoremodel
+
+                    # Register your models here.
+                    admin.site.register(Bookstoremodel)
