@@ -642,3 +642,9 @@ now,
             'name': {'required':'your name is required'}
         }
 
+
+
+'   Module-6-Book Store project
+
+editing data:
+    

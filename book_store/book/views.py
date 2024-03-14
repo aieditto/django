@@ -22,5 +22,3 @@ def show_book(request):
     books = Bookstoremodel.objects.all()
     return render(request, 'show_book.html', {'books': books})
 
-def edit_book(request):
-    return render(request,'edit_book.html')
